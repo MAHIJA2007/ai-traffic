@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: flow28-dashboard
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /_stcore/health
+    autoDeploy: true
+    envVars:
+      - key: TRAFFIC_AUTO_TRAIN
+        value: "1"
+      - key: TRAFFIC_TRAIN_JOBS
+        value: "1"
